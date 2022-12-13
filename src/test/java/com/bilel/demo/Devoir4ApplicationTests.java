@@ -18,7 +18,7 @@ class Devoir4ApplicationTests {
 
 	@Test
 	public void testCreateJoueur() {
-	Joueur joueuer = new Joueur("");
+	Joueur joueuer = new Joueur("salah","10");
 	JoueurRepository.save(joueuer);
 	}
 	

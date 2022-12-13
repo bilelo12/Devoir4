@@ -23,7 +23,7 @@ public class JoueurRestController {
 	@Autowired
 	JoueurService joueurService ;
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(path="all",method = RequestMethod.GET)
 	public List<Joueur> getAllProduits() {
 		return joueurService.findAllJoueur();
 	}
@@ -52,4 +52,10 @@ public class JoueurRestController {
 		return joueurService.findByEquipeIdEquipe(id);
 		
 	}
+	
+	@RequestMapping(value="/JoueurByName/{nom}",method = RequestMethod.GET)
+	public List<Joueur> findByNomJoueurContains(@PathVariable("nom") String nom) {
+	return joueurService.findByNomJoueurContains(nom);
+	}
+
 }

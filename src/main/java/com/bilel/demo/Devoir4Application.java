@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
+import com.bilel.demo.entities.Equipe;
 import com.bilel.demo.entities.Joueur;
 
 @SpringBootApplication
@@ -20,7 +21,7 @@ public class Devoir4Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		repositoryRestConfiguration.exposeIdsFor(Joueur.class);
+		repositoryRestConfiguration.exposeIdsFor(Joueur.class,Equipe.class);
 		
 	}
 
